@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="principal1.html">
+    <title>FICHA DE PERSONAL</title>
+</head>
+<body>
+    <h1></h1>
+    <br>
+    Usuario: <input type="text" id="usuario">
+    <br>
+    Password: <input type="password" id="password">
+    <br><br>
+    <input type="button" value="ingresar" 
+    onclick="ingresar()"> 
+    <input type="button" value="cancelar" 
+    onclick="ingresar()"> 
+
+    <script>
+        function ingresar(){
+            var usuario=document.getElementById("usuario").value;
+            var clave=document.getElementById("password"),value;
+
+            if(usuario==""){
+                alert("favor de ingresar su usuario");
+                return false;
+            }
+            if(clave==""){
+                alert("Favor de ingresar su clave");
+                return false;
+            }
+            if(usuario=="certus" && clave=="12345678"){
+                alert("Bienvenido")
+                window.open('principal.html','menu administrador','height=500px, width=800px')
+            }else{
+                alert("Verificando la data")
+            }
+        }
+
+
+    </script>
+</body>
+</html>

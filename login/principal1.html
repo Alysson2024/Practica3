@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="login.html">
+    <link rel="stylesheet" href="ficha.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>principal</title>    
+</head>
+<body>
+    <h1>FICHA DE PERSONAL</h1>
+    <br>
+    Codigo: <input type="text" id="Codigo" onkeypress="return solonumeros(event)">
+    <br>
+    Cliente: <input type="text" id="Cliente" onkeypress="return sololetras(event)">
+    <br>
+    DNI: <input type="password" id="DNI" onkeypress="return solonumeros(event)">
+    <br>
+    Direccion: <input type="Direccion">
+    <br>
+    Distrito: <input type="Distrito"id="Distrito" onkeypress="return sololetras(event)">
+    <br>
+    Provincia: <input type="provincia"id="Provincia" onkeypress="return sololetras(event)">
+    <br>
+    Departamento: <input type="departamento"id="Departamento" onkeypress="return sololetras(event)">
+    <br><br>
+    <input type="button" value="Ingresar" 
+    onclick="ingresar()"> 
+    <input type="button" value="Cancelar" 
+    onclick="ingresar()"> 
+    
+    <script>
+        var re=/[a-z]/ 
+
+    function validar() {
+            var OK = re.exec(codigo.value);
+        if (OK) {
+             alert('ok');  
+             return false;   
+       } else {
+          alert('error de codigo');
+          telefono.value = '' 
+          return false;       
+        }         
+      } 
+
+      function sololetras(e){
+        if (event.keyCode >33 && event.keyCode  <57) event.returnValue = false;
+     } 
+
+     var re2=/[0-9]/
+     function numeros(codigo){
+    
+        var ok = re2.exec(codigo.value);
+        if (ok) {
+             alert('ok'); 
+       } else {
+          alert('error'); 
+          codigo.value = ''
+
+  
+        }   
+     }
